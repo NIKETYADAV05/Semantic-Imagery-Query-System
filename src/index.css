@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --color-canvas: #080a0d;
+  --color-surface: #0f1216;
+  --color-surface-2: #161b22;
+  --color-surface-3: #1e252f;
+  --color-border: #252d38;
+  --color-border-bright: #2e3947;
+  --color-amber: #d97706;
+  --color-amber-bright: #f59e0b;
+  --color-amber-dim: #92400e;
+  --color-text: #e8edf2;
+  --color-text-dim: #8b96a3;
+  --color-text-faint: #4a5568;
+  --color-green: #10b981;
+  --color-green-dim: #064e3b;
+  --color-red: #ef4444;
+  --color-red-dim: #450a0a;
+  --color-blue: #3b82f6;
+  --color-blue-dim: #1e3a5f;
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: #080a0d;
+  color: #e8edf2;
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track { background: #080a0d; }
+::-webkit-scrollbar-thumb { background: #252d38; border-radius: 3px; }
+:hover::-webkit-scrollbar-thumb { background: #3b4656; }
+
+.font-display { font-family: 'Fraunces', Georgia, serif; }
+.font-mono { font-family: 'JetBrains Mono', 'Courier New', monospace; }
+
+.scanline {
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0,0,0,0.04) 2px,
+    rgba(0,0,0,0.04) 4px
+  );
+  pointer-events: none;
+}
+
+.grid-overlay {
+  background-image:
+    linear-gradient(rgba(46, 57, 71, 0.14) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(46, 57, 71, 0.14) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.amber-glow {
+  box-shadow: 0 0 25px rgba(217, 119, 6, 0.25);
+}
+
+.cyan-glow {
+  box-shadow: 0 0 25px rgba(6, 182, 212, 0.2);
+}
+
+.tag-pulse {
+  animation: tagpulse 2s ease-in-out infinite;
+}
+
+@keyframes tagpulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.45; }
+}
+
+.radar-sweep {
+  animation: radarsweep 4s linear infinite;
+  transform-origin: center;
+}
+
+@keyframes radarsweep {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.slide-in {
+  animation: slidein 0.25s ease-out;
+}
+
+@keyframes slidein {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}

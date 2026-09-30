@@ -1,0 +1,11 @@
+{
+  "title": "ARCHON EO — Semantic Imagery Query & Earth Observation System",
+  "description": "Enables analysts to semantically search and analyze satellite imagery for meaningful changes over time with precise filtering and quality controls.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
